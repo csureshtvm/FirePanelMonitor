@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+
+		<bean id="testServicesProvider"
+		class="com.test.services.provider.TestServicesProvider">
+		<!-- <property name="taskList">
+			<list>
+				<bean class="com.infosys.aham.filter.RuleFilterTaskImpl">
+					<property name="timeout" value="150000" />
+				</bean>
+			</list>
+		</property> -->
+	</bean>
+	
+	
+
+	<!-- <bean id="readInightsTarget" class="com.infosys.aham.services.dao.ReadInsights"
+		scope="prototype">
+		<property name="proxyHost" value="${proxy.host}"></property>
+		<property name="ProxyPortNumber" value="${proxy.port}"></property>
+		<property name="modelPath" value="${categoryModel.filePath}"></property>
+		<property name="productImgUrlBase" value="${product.img.url}"></property>
+		<property name="productImgUrlBaseEmail" value="${email.product.img.url}"></property>
+		<property name="openCommerceImgUrl" value="${opencommerce.img.url}"></property>
+		<property name="openCommerceAPIUrl" value="${opencommerce.api.url}"></property>
+	</bean>
+ -->
+	
+	<!-- <context:property-placeholder location="classpath*:configuration.properties" />
+
+	<bean id="confServiceProvider" class="com.infosys.aham.services.provider.ConfigurationServiceProvider">
+
+	</bean>
+
+	<bean id="confDataUtil"
+		class="com.infosys.aham.services.utils.ConfigDataUtil">
+		<property name="properties" ref="configproperties" />
+	</bean>
+
+	<bean id="configproperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="ignoreResourceNotFound">
+			<value>true</value>
+		</property>
+		<property name="locations">
+			<list>
+				<value>classpath*:configuration.properties</value>
+			</list>
+		</property>
+	</bean> -->
+	<!-- end of bean pool config -->
+
+</beans>

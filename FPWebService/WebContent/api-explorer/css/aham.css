@@ -1,0 +1,392 @@
+a.prev,a.next,a.prevPage,a.nextPage {
+	background:url(../images/arrow-lft.jpg) left center no-repeat;
+	cursor:pointer;
+	display:block;
+	float:left;
+	font-size:1px;
+	height:153px;
+	width:17px;
+	}
+	/* next button uses another background image */
+	a.nextPage {
+	background:url(../images/arrow-rgt.jpg) right center no-repeat;
+	clear:right;
+	}
+	/* disabled navigational button */
+	a.prevPage.disabled {
+	background:url(../images/arrow-lft-disabled.jpg) left center no-repeat;
+	cursor:auto;
+	}
+	 a.nextPage.disabled {
+	background:url(../images/arrow-rgt-disabled.jpg) left center no-repeat;
+	cursor:auto;
+	}
+	#ahamCarouselWrap .carouselWrap {
+	/* width:715px; */
+	width:100%;
+	margin:0 0 11px 0;
+	}
+#ahamCarouselWrap .carouselWrap .carousel{	
+height:230px;	
+}
+#ahamCarouselWrap .carouselWrap .carousel h3{	
+color:black;
+}
+#ahamCarouselWrap .carouselWrap .carousel h3 a{	
+margin-left:11px;
+font-size:0.857em;
+font-weight:normal;
+}
+#ahamCarouselWrap .carouselWrap div.scrollable {
+/* width:648px; */
+width:94%;
+height:220px;
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .itemWrapper{		
+	width:150px;
+	height:170px;
+	float:left;
+	margin:0 5px 0 5px;
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item{
+	position:absolute;
+	width:160px;
+	height:160px;			
+	padding:2px;	
+	display:block;
+	text-align:center;
+	border-right: 1px solid #CECECE;
+}			
+#ahamCarouselWrap .carouselWrap .scrollable .items .item img{			
+	width:140px;
+	height:140px;
+}	
+#ahamCarouselWrap .carouselWrap .scrollable .items .item span{			
+	float:left;
+	height:20px;
+	display:none;
+	/* font-size:1.4em;
+font-weight:bold; */
+line-height:1.2em;
+text-align:center;
+width:50%;
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item span.action{			
+	background:url("../images/product-buy-btn-tile.jpg") repeat scroll 0 0 transparent;	
+	color:#FFF;		
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item span.view{			
+	width:100%;	
+	background:url("../images/product-buy-btn-tile.jpg") repeat scroll 0 0 transparent;
+	/* background-color:#09C; */	
+	color:#FFF;	
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item .productTitle{			
+	width:100%;				
+	color:#09C;	
+	margin:2px 0 0 0;			
+	display:block;			
+	margin:0;
+	}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item:hover{
+	padding:0;
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item:hover span{
+	display:block;
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item span.offerBadge{
+	display:inline;
+	float:left;
+	height:60px;
+	position:absolute;
+	right:1px;
+	top:20px;
+	width:60px;
+	background:url("../images/ping-deals.png") no-repeat scroll 0 0 transparent;
+	color:#000000;
+	text-align:center;
+	padding:20px 5px 0 5px;
+	/* font-size:1em;
+	font-family:Arial; */
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item span.offerBadge span{
+	float:left;
+	display:inline;
+	/* font-size:1em;
+	font-weight:bold; */
+	height:1em;
+	line-height:1em;
+	text-align:center;
+	width:100%;	
+	padding:0;
+	margin:0;
+	color:white;
+}
+#ahamCarouselWrap .carouselWrap .scrollable .items .item span.offerBadge span.figure{
+	font-size:1.6em;	
+	line-height:1.2em;
+}
+
+/*
+Carousel at product page
+*/
+
+#ahamCarouselWrap .productCarouselWrap {
+	width:990px;
+	margin:0 0 11px 0;
+	}
+#ahamCarouselWrap .productCarouselWrap .carousel{	
+height:230px;	
+}
+#ahamCarouselWrap .productCarouselWrap .carousel h3{	
+color:black;
+}
+#ahamCarouselWrap .productCarouselWrap .carousel h3 a{	
+margin-left:11px;
+font-size:0.857em;
+font-weight:normal;
+}
+#ahamCarouselWrap .productCarouselWrap div.productScrollable {
+width:900px;
+height:220px;
+}
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .itemWrapper{		
+	width:170px;
+	height:170px;
+	float:left;
+	margin:0 5px 0 5px;
+}
+ #ahamCarouselWrap .productCarouselWrap .productScrollable .items .item{
+	position:absolute;
+	width:160px;
+	height:160px;			
+	padding:2px;	
+	display:block;
+	text-align:center;
+	border-right: 1px solid #CECECE;
+}
+ 
+
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .item span{			
+	float:left;
+	height:20px;
+	display:none;
+	/* font-size:1.4em;
+font-weight:bold; */
+line-height:1.2em;
+text-align:center;
+width:50%;
+}
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .item span.action{			
+	background:url("../images/product-buy-btn-tile.jpg") repeat scroll 0 0 transparent;	
+	color:#FFF;		
+}
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .item span.view{			
+	width:100%;	
+	background:url("../images/product-buy-btn-tile.jpg") repeat scroll 0 0 transparent;
+	/* background-color:#09C; */	
+	color:#FFF;	
+}
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .item .productTitle{			
+	width:100%;				
+	color:#09C;	
+	margin:2px 0 0 0;			
+	display:block;			
+	margin:0;
+	}
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .item:hover{
+	padding:0;
+}
+#ahamCarouselWrap .productCarouselWrap .productScrollable .items .item:hover span{
+	display:block;
+}
+.productCarouselWrap {	
+	clear:both;
+	overflow:hidden;	
+	position:relative;	
+	margin:0 0 11px 0;
+	}
+
+.productCarouselWrap h3 {
+font-size:1.4em;
+margin:2px 0;
+}
+ /* 
+   root element for the scrollable. 
+   when scrolling occurs this element stays still. 
+*/ 
+div.productScrollable {
+	float:left;
+	height:499px;
+	overflow:hidden;
+	position:relative;
+	width:1000px;
+	display:block;
+	background-color:#FFFFFF;
+}
+/* 
+	root element for scrollable items. Must be absolutely positioned 
+	and it should have a extremely large width to accomodate scrollable items. 
+	it's enough that you set width and height for the root element and 
+	not for this element. 
+*/ 
+div.productScrollable div.items {
+/* this cannot be too large */ 
+position:absolute;
+width:20000em;
+}
+div.productScrollable div.items a {
+float:left;
+text-decoration:none;
+}
+
+div.productScrollable div.items .floatLabel {
+-moz-opacity:0.6;
+border-top:1px solid;
+bottom:0;
+filter:alpha(opacity=60);
+font-size:1.1667em;
+font-weight:bold;
+height:50px;
+left:0;
+line-height:50px;
+opacity:0.6;
+position:absolute;
+width:250px;
+}
+/* 
+	a single item. must be floated in horizontal scrolling. 
+	typically, this element is the one that *you* will style 
+	the most. 
+*/ 
+div.productScrollable div.items > div {
+float:left;
+}
+
+ul.vertical{
+	list-style:none outside none;
+}
+ul.verticalWrapper{
+	margin: 0 5px;
+	position: absolute;
+}
+li.item{
+	text-align: center;
+	border-bottom: 1px solid #CECECE;
+	padding: 5px 0 0;
+}
+div.vertical{
+	float: left;
+    overflow: hidden;
+}
+div.verticalScrollable ul.verticalWrapper a {
+text-decoration:none;
+}
+div.verticalScrollable{
+	background-color: #FFFFFF;
+    display: block;
+    float: left;
+    overflow: hidden;
+    position: relative;
+   height: 930px;
+}
+/*
+Carousel at search page
+*/
+
+
+#ahamCarouselWrap .productCarouselWrap div.searchScrollable {
+width:78%;
+height:220px;
+}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .itemWrapper{		
+	width:173px;
+	height:170px;
+	float:left;
+	margin:0 5px 0 5px;
+}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item{
+	position:absolute;
+	width:170px;
+	height:160px;			
+	padding:3px;	
+	display:block;
+	text-align:center;
+	border-right: 1px solid #CECECE;
+}			
+
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item span{			
+	float:left;
+	height:20px;
+	display:none;
+	/* font-size:1.4em;
+font-weight:bold; */
+line-height:1.2em;
+text-align:center;
+width:50%;
+}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item span.action{			
+	background:url("../images/product-buy-btn-tile.jpg") repeat scroll 0 0 transparent;	
+	color:#FFF;		
+}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item span.view{			
+	width:100%;	
+	background:url("../images/product-buy-btn-tile.jpg") repeat scroll 0 0 transparent;
+	/* background-color:#09C; */	
+	color:#FFF;	
+}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item .productTitle{			
+	width:100%;				
+	color:#09C;	
+	margin:2px 0 0 0;			
+	display:block;			
+	margin:0;
+	}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item:hover{
+	padding:0;
+}
+#ahamCarouselWrap .productCarouselWrap .searchScrollable .items .item:hover span{
+	display:block;
+}
+a.up,a.upPage {
+	background:url(../images/arrow-lft.jpg) no-repeat scroll 50% top transparent;
+	cursor:pointer;
+	display:block;
+	font-size:1px;
+	height:153px;
+	width:17px;
+	 margin: -125px 0 -65px 70px;
+	transform: rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	}
+	/* next button uses another background image */
+	a.downPage {
+	background:url(../images/arrow-rgt.jpg) no-repeat scroll 50% top transparent;
+	cursor:pointer;
+	display:block;
+	font-size:1px;
+	height:153px;
+	width:17px;
+	 margin: 865px 0 0 70px;
+	transform: rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	}
+	/* disabled navigational button */
+	a.upPage.disabled {
+	background:url(../images/arrow-lft-disabled.jpg) bottom center no-repeat;
+	cursor:auto;
+	margin:  -125px 0 -65px 195px;
+	transform: rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	}
+	 a.downPage.disabled {
+	background:url(../images/arrow-rgt-disabled.jpg) top center no-repeat;
+	cursor:auto;
+	margin: 865px 0 0 70px;
+	transform: rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	}

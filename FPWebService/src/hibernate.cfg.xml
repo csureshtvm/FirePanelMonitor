@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Derby Configuration -->
+		<!-- 
+		<property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+		<property name="hibernate.connection.url">jdbc:derby://localhost:1527/LECTURE2</property>
+		<property name="dialect">org.hibernate.dialect.DerbyDialect</property>
+ 		-->
+ 		
+		<!-- Oracle Configuration -->
+	 	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://142.44.211.146:3306/fpdb</property>
+		<property name="hibernate.connection.username">root</property>
+		 <property name="hibernate.connection.password">Vision2017$</property>
+		<!-- <property name="hibernate.connection.password">visionfocus</property>  -->
+		<property name="hibernate.cache.user_query_cache">false</property>	
+		<property name="hibernate.connection.release_mode">auto</property>
+		<property name="hibernate.transaction.auto_close_session">true</property>
+		<property name="hibernate.jdbc.fetch_size">1000</property>
+		<property name="hibernate.default_batch_fetch_size">100</property>
+		<property name="hibernate.jdbc.batch_size">50</property>
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.connection.characterEncoding">utf-8</property>
+		<property name="hibernate.connection.CharSet">utf-8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+   		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!-- <property name="hibernate.hbm2ddl.auto">create</property>-->
+        <!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">20</property>
+        
+        <!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+
+		<!--  Load all mapping files -->
+		<!--<mapping class="com.vision.fpservices.db.model.User"/>
+		<mapping class="com.vision.fpservices.db.model.AddressDetails"/>
+		<mapping class="com.vision.fpservices.db.model.ContactDetails"/>
+		<mapping class="com.vision.fpservices.db.model.AlarmNotificationSettings"/>
+		<mapping class="com.vision.fpservices.db.model.AlarmTestSchedule"/>
+		<mapping class="com.vision.fpservices.db.model.CustomerDetails"/>
+		<mapping class="com.vision.fpservices.db.model.Building"/>
+		<mapping class="com.vision.fpservices.db.model.AlarmEvents"/>
+		<mapping class="com.vision.fpservices.db.model.AlarmNotfnHistory"/>
+		<mapping class="com.vision.fpservices.db.model.AlarmDevices"/>
+		<mapping class="com.vision.fpservices.db.model.AlarmDeviceReset"/>
+		--><!-- <mapping class="com.vision.monitor.db.model.Controller"/>
+		<mapping class="com.vision.monitor.db.model.InputDevices"/>
+		<mapping class="com.vision.monitor.db.model.DeviceStatus"/>
+		<mapping class="com.vision.monitor.db.model.DeviceStatusHistory"/>
+		 -->
+		
+		
+	</session-factory>
+</hibernate-configuration>

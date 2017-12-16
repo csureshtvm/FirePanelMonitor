@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link type="text/css" href="css/aham.css" rel="stylesheet" />
+<script type="text/javascript" src="lib/aham.js"></script>
+<script type="text/javascript" src="lib/jquery-latest.js"></script>
+<title>Widget Configurator </title>
+
+<style type="text/css">
+/* popup_box DIV-Styles*/
+#popup_box {
+	display:none; /* Hide the DIV */
+	position:fixed;
+	_position:absolute; /* hack for internet explorer 6 */
+	height:300px;
+	width:500px;
+	background:#FFFFFF;
+	left: 450px;
+	top: 150px;
+	z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+	margin-left: 15px;
+
+	/* additional features, can be omitted */
+	border:2px solid #ff0000;
+	padding:15px;
+	font-size:15px;
+	-moz-box-shadow: 0 0 5px #ff0000;
+	-webkit-box-shadow: 0 0 5px #ff0000;
+	box-shadow: 0 0 5px #ff0000;
+
+}
+
+a{
+cursor: pointer;
+text-decoration:none;
+}
+
+/* This is for the positioning of the Close Link */
+#popupBoxClose {
+	font-size:20px;
+	line-height:15px;
+	right:5px;
+	top:5px;
+	position:absolute;
+	color:#6fa5e2;
+	font-weight:500;
+}
+.formHeading {
+	background: none repeat scroll 0 0 #89BF04;
+    #font-family: georgia,arial,Helvetica;
+    font-size: 18px !important;
+    #font-style: italic;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    width: 765px;
+}
+.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    border-color: red;
+}
+</style>
+<script type="text/javascript">
+
+function getPreview(){
+
+	var carousel = document.getElementById('carouselType').value;
+
+	var price = document.getElementById('displayPrice').value;
+	var proPerCar = document.getElementById('noOfProPerCar').value;
+	var results = document.getElementById('numberOfResults').value;
+	var title = document.getElementById('title').value;
+	if(carousel=="vertical"){
+		$('.vert').attr('style','');
+	$('.vert').attr('id','alsoViewedItemsDiv');
+	$('.horizons').attr('style','display:none;');
+	$('.horizons').attr('id','alsoViewedItemsDiv123');$('.horizons').html('');
+	}else{
+		$('.horizons').attr('style','');
+		$('.horizons').attr('id','alsoViewedItemsDiv');
+		$('.vert').attr('style','display:none;');
+		$('.vert').attr('id','alsoViewedItemsDiv123');
+		$('.vert').html('');
+	}
+	aham_getRecommendations("alsoViewedItems",{userId:'1024',productId:'041A0051000',carouselType:carousel,displayPrice:price,noOfProPerCar:proPerCar,
+		ahamServicesUrl:'/aham-services-web',format:'json',numberOfResults:results,title:title});
+
+
+
+}
+
+function getCode() {
+var carousel = document.getElementById('carouselType').value;
+
+	var price = document.getElementById('displayPrice').value;
+	var proPerCar = document.getElementById('noOfProPerCar').value;
+	var results = document.getElementById('numberOfResults').value;
+	var title = document.getElementById('title').value;
+
+	var popUpCode =" <h3> Please Copy the basic Syntax of Java Script Code to be Included in your code for the Carousel to Work</h3>";
+	 popUpCode = popUpCode+"<label width='100px;'>aham_getRecommendations(alsoViewedItems," ;
+	popUpCode = popUpCode+"<br />";
+	popUpCode = popUpCode+"{userId:'1024',productId:'041A0051000',carouselType:'"+carousel+"',displayPrice:'"+price;
+	popUpCode = popUpCode+"<br />";
+	popUpCode = popUpCode+"',noOfProPerCar:'"+proPerCar+"',ahamServicesUrl:'/aham-services-web',format:'json',";
+	popUpCode = popUpCode+"<br />";
+	popUpCode = popUpCode+"numberOfResults:'"+results+"',title:'"+title+"'});";
+	popUpCode = popUpCode+"</label>";
+	popUpCode = popUpCode+"<h3> Create a div id by adding Div to the type of recommendations. In this example it is <b>'alsoViewedItemsDiv' </b>";
+	popUpCode = popUpCode+"</h3>";
+popUpCode = popUpCode+"<a id='popupBoxClose'>Close</a>";
+$('#popup_box').html(popUpCode);
+	// When site loaded, load the Popupbox First
+	loadPopupBox();
+
+	$('#popupBoxClose').click( function() {
+		unloadPopupBox();
+	});
+
+	$('#container').click( function() {
+		unloadPopupBox();
+	});
+}
+	function unloadPopupBox() {	// TO Unload the Popupbox
+		$('#popup_box').fadeOut("slow");
+		$("#container").css({ // this is just for style
+			"opacity": "1"
+		});
+	}
+
+	function loadPopupBox() {	// To Load the Popupbox
+		$('#popup_box').fadeIn("slow");
+		$("#container").css({ // this is just for style
+			"opacity": "0.3"
+		});
+	}
+	/**********************************************************/
+
+
+/* aham_getRecommendations("ultimatelyBoughtItems",{userId:'1024',productId:'041A0051000',displayPrice:'true',noOfProPerCar:'3',
+	ahamServicesUrl:'/aham-services-web',format:'json',title:'What Do Customers Ultimately Buy After Viewing This Item?'});
+ aham_getRecommendations("boughtTogetherItems",{userId:'1024',productId:'041A0051000',displayPrice:'true',
+	ahamServicesUrl:'/aham-services-web',format:'json',numberOfResults:'20',title:'Frequently Bought Together:'});
+
+
+aham_trackUserActivity("PRODUCT_VIEW",{entityVal:'PRODUCT',userId:'1024',valueVal:'041A0051000',displayPrice:'true',
+	srcVal:'LAB',sessionIDVal:'FAB9477511101253E567563B2DB45CF8.node1',ahamScribeUrl:'/aham-scribe'}) */
+</script>
+</head>
+<body>
+<div style="padding: 18px 0 0 75px; ">
+	<label  class="formHeading">Widget Configurator</label>
+</div>
+<div style="padding: 18px 0 0 75px; " >
+<table  width="765px" style="padding:40px 155px; border: 1px solid grey;line-height:1.7;" >
+
+<tr>
+<td>Please Select Carousel Type: </td>
+<td><select id="carouselType">
+<option value="horizontal" selected="selected">Horizontal</option>
+<option value="vertical">Vertical</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Please Select Display Price Option: </td>
+<td><select id="displayPrice">
+<option value="true" selected="selected">True</option>
+<option value="false">False</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Please Select Number of Products Per Carousel: </td>
+<td><select id="noOfProPerCar">
+<option value="2" selected="selected">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Please Select Number of Results to be Fetched: </td>
+<td><select id="numberOfResults">
+<option value="10" selected="selected">10</option>
+<option value="20">20</option>
+<option value="30">30</option>
+<option value="40">40</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Please Input Title for the Carousel: </td>
+<td><input type="text" id="title"  />
+</td>
+</tr>
+<tr>
+
+<td colspan="2" align="center">
+<input type="button" value="Preview" class="rounded-corners" onclick="javascript:getPreview();"  />
+<input type="button" value="Get Code" class="rounded-corners" onclick="javascript:getCode();" />
+</td>
+</tr>
+</table>
+
+<div id="alsoViewedItemsDiv123" class="vert">
+</div>
+
+<div id="alsoViewedItemsDiv123"  class="horizons">
+</div>
+<div id="popup_box">	<!-- OUR PopupBox DIV-->
+</div>
+</div>
+</body>
+</html>
