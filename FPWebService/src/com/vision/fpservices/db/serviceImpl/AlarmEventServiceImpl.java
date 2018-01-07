@@ -23,6 +23,7 @@ import com.test.utils.ServerContextHelper;
 import com.vision.fpservices.db.dao.AlarmDevicesDAO;
 import com.vision.fpservices.db.dao.AlarmEventDao;
 import com.vision.fpservices.db.dao.AlarmEventResetDAO;
+import com.vision.fpservices.db.dao.AlarmMessagesDAO;
 import com.vision.fpservices.db.dao.AlarmNotfnHistoryDAO;
 import com.vision.fpservices.db.dao.BuildingDAO;
 import com.vision.fpservices.db.dao.ContactDAO;
@@ -33,6 +34,7 @@ import com.vision.fpservices.db.daoImpl.AlarmEventDaoImpl;
 import com.vision.fpservices.db.model.AlarmDeviceReset;
 import com.vision.fpservices.db.model.AlarmDevices;
 import com.vision.fpservices.db.model.AlarmEvents;
+import com.vision.fpservices.db.model.AlarmMessages;
 import com.vision.fpservices.db.model.AlarmNotfnHistory;
 import com.vision.fpservices.db.model.Building;
 import com.vision.fpservices.db.model.ContactDetails;
@@ -43,6 +45,7 @@ import com.vision.fpservices.dto.AlarmEventDTO;
 import com.vision.fpservices.dto.AlarmEventRequestDTO;
 import com.vision.fpservices.dto.AlarmEventStatisticsDTO;
 import com.vision.fpservices.dto.AlarmEventWithContactsDTO;
+import com.vision.fpservices.dto.AlarmMessagesDTO;
 import com.vision.fpservices.dto.AlarmNotfnEventDetailsDTO;
 import com.vision.fpservices.dto.AlarmStatisticsDTO;
 import com.vision.fpservices.dto.BuildingDTO;
@@ -86,6 +89,8 @@ public class AlarmEventServiceImpl implements AlarmEventService{
 	@Autowired
 	SoftwareMessageHistoryDao softwareMessageHistoryDao;
 	
+	@Autowired
+	AlarmMessagesDAO alarmMessagesDao;
 	
 	public List<AlarmEventDTO> getAllAlarmEvents(String customerId,String userId){
 		List<AlarmEventDTO> alarmEventList= alarmEventDao.getAllalarmEvents(customerId);
@@ -627,5 +632,27 @@ public class AlarmEventServiceImpl implements AlarmEventService{
 		return (alarmEventId==eventId)?true:false;
 		
 	}
+	
+	
+	@Transactional(readOnly=false)
+	public boolean saveAlarmMessage(Integer buildingId,String deviceId, String messageDetails){
+		
+		AlarmMessages alarmMessage=new AlarmMessages();
+		alarmMessage.setBuildingId(buildingId);
+		alarmMessage.setDeviceId(deviceId);
+		alarmMessage.setMessageDetails(messageDetails);
+		alarmMessage.setCreatedTime(new Date());
+		alarmMessagesDao.makePersistent(alarmMessage);
+			
+		
+		return true;
+	}
+	@Override
+	public List<AlarmMessagesDTO> getAllAlarmMessages(Integer customerId,Integer buildingId){
+		
+		return alarmMessagesDao.getAllSoftwareMessages(customerId, buildingId);
+	}
+	
+	
 	
 }

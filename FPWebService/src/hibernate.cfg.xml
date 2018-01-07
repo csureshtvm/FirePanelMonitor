@@ -15,7 +15,7 @@
 	 	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://142.44.211.146:3306/fpdb</property>
 		<property name="hibernate.connection.username">root</property>
-		 <property name="hibernate.connection.password">Vision2017$</property>
+		 <property name="hibernate.connection.password"></property>
 		<!-- <property name="hibernate.connection.password">visionfocus</property>  -->
 		<property name="hibernate.cache.user_query_cache">false</property>	
 		<property name="hibernate.connection.release_mode">auto</property>

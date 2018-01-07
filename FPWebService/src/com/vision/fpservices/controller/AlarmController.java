@@ -266,6 +266,39 @@ public class AlarmController {
 	    	//return Response.ok().entity( "getClusterRecommendations Test: "+result+":"+testId ).build();
 
 	    }
+	    
+	    
+	    
+	    @SuppressWarnings("unchecked")
+	    @RequestMapping(value="/saveAlarmMessage", method = RequestMethod.POST)
+	    @ApiOperation(value = "Save Alarm message")
+	    public String saveAlarmMessage(@ApiParam(value = "buildingId", required = true) @QueryParam("buildingId") Integer buildingId,
+	    		@ApiParam(value = "customerId", required = false) @QueryParam("customerId") Integer customerId,
+	    		@ApiParam(value = "deviceId", required = false) @QueryParam("deviceId") String deviceId,
+	    		@ApiParam(value = "messageDetails", required = true) @QueryParam("messageDetails") String messageDetails) {
+	    	
+	    	System.out.println("messageDetails--------->"+messageDetails);
+	    	return FPUtil.getJsonResponseAsString(alarmEventService.saveAlarmMessage(buildingId, deviceId, messageDetails));
+	    	
+	    	//return ((BuildingServicesProvider) ServerContextHelper.getBean( "buildingServicesProvider" ) ).getBuildings(customerId);
+	    	//return Response.ok().entity( "getClusterRecommendations Test: "+result+":"+testId ).build();
 
+	    }
+
+	    @SuppressWarnings("unchecked")
+	    @GET
+	    @RequestMapping(value="/getAllAlarmMessages",produces="application/json; charset=UTF-8")
+	    @ApiOperation(value = "To get all alarm messages")
+	    public String getAllAlarmMessages(
+	    	    @RequestParam(value = "customerId", required = false) Integer customerId,
+	    	    @RequestParam(value = "buildingId", required = false) Integer buildingId) {
+	    	
+	    	//System.out.println(alarmEventService);
+	    	return FPUtil.getJsonResponseAsString(alarmEventService.getAllAlarmMessages(customerId, buildingId));
+	    	
+	    	//return ((BuildingServicesProvider) ServerContextHelper.getBean( "buildingServicesProvider" ) ).getBuildings(customerId);
+	    	//return Response.ok().entity( "getClusterRecommendations Test: "+result+":"+testId ).build();
+
+	    }
 
 }

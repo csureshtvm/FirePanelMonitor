@@ -10,6 +10,7 @@ import com.vision.fpservices.dto.AlarmEventDTO;
 import com.vision.fpservices.dto.AlarmEventRequestDTO;
 import com.vision.fpservices.dto.AlarmEventStatisticsDTO;
 import com.vision.fpservices.dto.AlarmEventWithContactsDTO;
+import com.vision.fpservices.dto.AlarmMessagesDTO;
 import com.vision.fpservices.dto.AlarmNotfnEventDetailsDTO;
 import com.vision.fpservices.dto.AlarmStatisticsDTO;
 import com.vision.fpservices.dto.SoftwareMessageDTO;
@@ -38,5 +39,7 @@ public interface AlarmEventService {
 	public List<SoftwareMessagePendingDTO> getAllNotfnPendingSoftwareMessages();
 
 	public boolean updateSwNotfnStatus(Integer alarmEventId,String notfnType,String notfnStatus);
+	public boolean saveAlarmMessage(Integer buildingId,String deviceId, String messageDetails);
+	public List<AlarmMessagesDTO> getAllAlarmMessages(Integer customerId,Integer buildingId);
 	
 }
